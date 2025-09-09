@@ -11,16 +11,6 @@
   - 🗄️ **Data Handling**: Automatically fetches historical stock data for the selected ticker and processes it for LSTM training.
   - ⚡ **Lightweight and Fast**: Minimalistic frontend and efficient backend to ensure fast predictions and smooth visualization.
   - 🧪 **Scalable ML Architecture**: LSTM model can be retrained or improved with more data for better accuracy.
-
-  ## 📋 Installation Guide
-
-  Follow these steps to get the project running locally:
-
-  1. **Clone the repository**
-  ```bash
-  git clone https://github.com/SouvikPachal2004/Stock-Price-Prediction.git
-  cd stock-price-predictor/backend
-
 🔮 Multiple ML Models: Compare LSTM predictions with ARIMA or Prophet models for improved performance.
 
 📊 Advanced Visualization: Add candlestick charts and volume analysis.
@@ -103,4 +93,12 @@ Chart.js for beautiful interactive charts.
 Flask community for excellent backend support.
 
 Inspiration from stock price prediction tutorials and open-source projects.
+ 
+## 📋 Installation Guide
 
+  Follow these steps to get the project running locally:
+
+  1. **Clone the repository**
+  ```bash
+  git clone https://github.com/SouvikPachal2004/Stock-Price-Prediction.git
+  cd stock-price-predictor/backend
