@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictor - Advanced LSTM Model</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="logo-text">StockPredict</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#predictor" class="nav-link">Predictor</a></li>
+                        <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Predict Stock Prices with <span>Deep Learning</span></h1>
+                    <p class="hero-description">Harness the power of LSTM neural networks to forecast market trends with unprecedented accuracy.</p>
+                    <div class="hero-buttons">
+                        <a href="#predictor" class="btn btn-primary">Try Predictor <i class="fas fa-arrow-right"></i></a>
+                        <a href="#features" class="btn btn-outline">Learn More <i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-illustration">
+                        <div class="chart-animation">
+                            <div class="chart-line"></div>
+                            <div class="chart-points">
+                                <div class="point point-1"></div>
+                                <div class="point point-2"></div>
+                                <div class="point point-3"></div>
+                                <div class="point point-4"></div>
+                                <div class="point point-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Our platform offers cutting-edge tools for stock market prediction</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">Deep Learning</h3>
+                    <p class="feature-description">Advanced LSTM networks that learn complex patterns in stock data for accurate predictions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Real-time Analysis</h3>
+                    <p class="feature-description">Get instant predictions based on the most recent market data and trends.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="feature-title">Historical Data</h3>
+                    <p class="feature-description">Access comprehensive historical data for accurate trend analysis and backtesting.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Responsive Design</h3>
+                    <p class="feature-description">Works seamlessly across all your devices for predictions on the go.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Secure & Private</h3>
+                    <p class="feature-description">Your data is encrypted and secure. We never share your information with third parties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Support</h3>
+                    <p class="feature-description">Get help from our team of financial experts and data scientists whenever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Predictor Section -->
+    <section id="predictor" class="predictor">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Stock Price Predictor</h2>
+                <p class="section-subtitle">Enter stock details to get accurate price predictions</p>
+            </div>
+            <div class="predictor-container">
+                <div class="predictor-form">
+                    <div class="form-group">
+                        <label for="stock-ticker" class="form-label">Select Stock Ticker</label>
+                        <select id="stock-ticker" class="form-control">
+                            <option value="AAPL">Apple Inc. (AAPL)</option>
+                            <option value="MSFT">Microsoft Corporation (MSFT)</option>
+                            <option value="GOOGL">Alphabet Inc. (GOOGL)</option>
+                            <option value="AMZN">Amazon.com Inc. (AMZN)</option>
+                            <option value="TSLA">Tesla Inc. (TSLA)</option>
+                            <option value="META">Meta Platforms Inc. (META)</option>
+                            <option value="NVDA">NVIDIA Corporation (NVDA)</option>
+                            <option value="JPM">JPMorgan Chase & Co. (JPM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date" class="form-label">Start Date</label>
+                        <input type="date" id="start-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date" class="form-label">End Date</label>
+                        <input type="date" id="end-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="prediction-days" class="form-label">Days to Predict</label>
+                        <input type="number" id="prediction-days" class="form-control" min="1" max="30" value="7">
+                    </div>
+                    <button id="predict-btn" class="btn btn-primary btn-block">
+                        <i class="fas fa-magic"></i> Predict Stock Price
+                    </button>
+                    <div id="loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Processing your request...</p>
+                    </div>
+                </div>
+                <div class="predictor-result">
+                    <div class="chart-container">
+                        <canvas id="stock-chart"></canvas>
+                    </div>
+                    <div id="prediction-info" class="prediction-info">
+                        <h3 class="prediction-title">Prediction Summary</h3>
+                        <div class="prediction-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Current Price:</span>
+                                <span id="current-price" class="stat-value">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Predicted Price:</span>
+                                <span id="predicted-price" class="stat-value">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Change:</span>
+                                <span id="price-change" class="stat-value">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Confidence:</span>
+                                <span id="confidence" class="stat-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Our Technology</h2>
+                <p class="section-subtitle">Learn how our LSTM model works to predict stock prices</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-title">How Our LSTM Model Works</h3>
+                    <p class="about-description">Our stock price prediction system leverages Long Short-Term Memory (LSTM) networks, a type of recurrent neural network (RNN) specifically designed to recognize patterns in sequences of data.</p>
+                    <p class="about-description">The model analyzes historical stock prices, trading volumes, and technical indicators to identify complex patterns that might be invisible to traditional analysis methods.</p>
+                    <div class="tech-highlights">
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="tech-title">Data Processing</h4>
+                                <p class="tech-description">Normalization and feature engineering for optimal model performance</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h4 class="tech-title">Model Architecture</h4>
+                                <p class="tech-description">Multi-layer LSTM with dropout regularization to prevent overfitting</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h4 class="tech-title">Validation</h4>
+                                <p class="tech-description">Rigorous backtesting against historical data to ensure accuracy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="diagram">
+                        <div class="diagram-step">
+                            <div class="step-icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                            <p class="step-title">Input Data</p>
+                        </div>
+                        <div class="diagram-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="diagram-step">
+                            <div class="step-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <p class="step-title">Preprocessing</p>
+                        </div>
+                        <div class="diagram-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="diagram-step">
+                            <div class="step-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <p class="step-title">LSTM Model</p>
+                        </div>
+                        <div class="diagram-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="diagram-step">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <p class="step-title">Predictions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="info-title">Email Us</h3>
+                        <p class="info-text">contact@stockpredict.ai</p>
+                        <p class="info-text">support@stockpredict.ai</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="info-title">Location</h3>
+                        <p class="info-text">123 AI Street</p>
+                        <p class="info-text">Tech City, TC 12345</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="info-title">Call Us</h3>
+                        <p class="info-text">+1 (555) 123-4567</p>
+                        <p class="info-text">Mon-Fri 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="logo-text">StockPredict</span>
+                    </div>
+                    <p class="footer-description">Advanced stock price prediction using deep learning technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-list">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#predictor">Predictor</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Resources</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Tutorials</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Legal</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 StockPredict. All rights reserved.</p>
+                <p>This is a demonstration project for educational purposes only. Not intended for actual financial advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
