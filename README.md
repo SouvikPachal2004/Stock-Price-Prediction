@@ -20,22 +20,26 @@
   ```bash
   git clone https://github.com/SouvikPachal2004/Stock-Price-Prediction.git
   cd stock-price-predictor/backend
-🚀 Usage Instructions
 
-Enter a stock ticker symbol (e.g., AAPL, MSFT) in the input field.
+🔮 Multiple ML Models: Compare LSTM predictions with ARIMA or Prophet models for improved performance.
 
-Select the desired date range for prediction.
+📊 Advanced Visualization: Add candlestick charts and volume analysis.
 
-Click Predict to visualize:
+💾 Database Integration: Store historical and predicted data for analytics and historical comparisons.
 
-The predicted stock prices by the LSTM model.
+📄 License
 
-The actual historical prices for comparison.
+This project is open-source under the MIT License 📝
 
-Charts update dynamically, allowing zooming and hovering for detailed information.
+🙏 Acknowledgements
 
-🔹 Note: The first prediction may take a few seconds as the model processes the historical data.
+TensorFlow & Keras for LSTM model implementation.
 
+Chart.js for beautiful interactive charts.
+
+Flask community for excellent backend support.
+
+Inspiration from stock price prediction tutorials and open-source projects.
 🧩 How It Works
 
 Data Fetching: The data_fetcher.py script collects historical stock prices.
@@ -99,3 +103,4 @@ Chart.js for beautiful interactive charts.
 Flask community for excellent backend support.
 
 Inspiration from stock price prediction tutorials and open-source projects.
+
